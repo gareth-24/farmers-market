@@ -6,9 +6,9 @@ function Market(props){
     <React.Fragment>
   
       <h3>{props.day}</h3>
-      <h3>{props.location}</h3>
-      <h3>{props.hours}</h3>
-      <h3>{props.booth}</h3>
+      <h3>Location: <em>{props.location}</em></h3>
+      <h3>Hours: <em>{props.hours}</em></h3>
+      <h3>Booth: <em>{props.booth}</em></h3>
       <hr/>
     </React.Fragment>
   )

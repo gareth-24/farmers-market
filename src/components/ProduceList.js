@@ -270,7 +270,7 @@ const availableProduce = [
   }
 ];
 
-function ProduceList(){
+function ProduceList(props){
   return (
     <React.Fragment>
       <hr/>
@@ -278,7 +278,7 @@ function ProduceList(){
         <Produce month={produce.month}
           selection={produce.selection}
           key={index}/>
-      )}
+      ).filter(market => market.key === props.formMonthCounter.toString())}
     </React.Fragment>
   );
 }

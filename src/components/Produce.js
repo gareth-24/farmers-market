@@ -1,12 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
+
 function Produce(props){
   return (
     <React.Fragment>
       <h3>Available produce - {props.month}</h3>
-      <p><em>{props.selection}</em></p>
+      <p><em>{props.selection.join(', ')}</em></p>
+      {/* {props.selection.map((element,index) => {
+        props.selection[index]
+      })} */}
       <hr/>
+  
     </React.Fragment>
   );
 }

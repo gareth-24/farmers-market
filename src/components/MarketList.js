@@ -44,6 +44,17 @@ const mainMarketSchedule = [
  function MarketList(props){
   return (
 
+    <React.Fragment>
+    {mainMarketSchedule.map((market, index) =>
+      
+      <Market day = {market.day}
+        location = {market.location}
+        hours = {market.hours}
+        booth = {market.booth}
+        key = {index}/>
+    ).filter(market => market.key === props.formDay.toString())}
+  </React.Fragment>
+
    //if(formDay === key)
 
    // <React.Fragment>
@@ -59,7 +70,6 @@ const mainMarketSchedule = [
    // }}
    // </React.Fragment>
 
-
       // <React.Fragment>
 
       // {mainMarketSchedule.forEach((market,index) => {
@@ -73,17 +83,6 @@ const mainMarketSchedule = [
       // })}
       // </React.Fragment>
 
-      <React.Fragment>
-        {mainMarketSchedule.map((market, index) =>
-          
-          <Market day = {market.day}
-            location = {market.location}
-            hours = {market.hours}
-            booth = {market.booth}
-            key = {index}/>
-        ).filter(market => market.key === props.formDay.toString())}
-      </React.Fragment>
-  //
   );
  }
 

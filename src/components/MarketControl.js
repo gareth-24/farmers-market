@@ -10,6 +10,11 @@ class MarketControl extends React.Component {
     };
   }
 
+  handleClickSunday = () => {
+    this.setState(prevState => ({
+      formDay: 0
+    }))
+  }
   handleClickMonday = () => {
     this.setState(prevState => ({
       formDay: 1
@@ -21,21 +26,37 @@ class MarketControl extends React.Component {
       formDay: 2
     }))
   }
+  handleClickWednesday = () => {
+    this.setState(prevState => ({
+      formDay: 3
+    }))
+  }
+  handleClickThursday = () => {
+    this.setState(prevState => ({
+      formDay: 4
+    }))
+  }
+  handleClickSaturday = () => {
+    this.setState(prevState => ({
+      formDay: 5
+    }))
+  }
+
   
   render(){
     let currentMarket = null;
-    // let currentlyVisibleState = null;
-    if(this.state.formDay === 1){
-      currentMarket = <MarketList formDay={this.state.formDay}/>;
-      // currentlyVisibleState = currentMarket[1];            
-    } 
-    // else if(this.state.formDay === 2){
-
-    // }
+    
+    //if(this.state.formDay === 1){
+    currentMarket = <MarketList formDay={this.state.formDay}/>;          
+  
     return(
       <React.Fragment>
+        <button onClick={this.handleClickSunday}>Sunday</button>
         <button onClick={this.handleClickMonday}>Monday</button>
         <button onClick={this.handleClickTuesday}>Tuesday</button>
+        <button onClick={this.handleClickWednesday}>Wednesday</button>
+        <button onClick={this.handleClickThursday}>Thursday</button>
+        <button onClick={this.handleClickSaturday}>Saturday</button>
         {currentMarket}
       </React.Fragment>
     );
