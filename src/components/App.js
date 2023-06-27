@@ -1,9 +1,14 @@
 import React from "react";
+import MarketControl from "./MarketControl";
+import ProduceControl from "./ProduceControl";
+import Header from "./Header";
 
 function App(){
   return ( 
     <React.Fragment>
-      <p>hello</p>
+      <Header />
+      <MarketControl />
+      <ProduceControl />
     </React.Fragment>
   );
 }
